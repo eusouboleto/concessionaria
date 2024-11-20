@@ -1,0 +1,35 @@
+footer {
+  background: linear-gradient(45deg, #4f46e5, #3b82f6); /* Fundo gradiente igual ao header */
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 20px 20px 0 0; /* Bordas arredondadas na parte superior */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15); /* Sombra superior */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+footer div {
+  display: flex;
+  gap: 1.5rem;
+}
+
+footer a {
+  color: #fbbf24; /* Amarelo vibrante */
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+footer a:hover {
+  color: #ffffff; /* Troca para branco ao passar o mouse */
+  transform: scale(1.1); /* Leve aumento */
+}

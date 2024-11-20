@@ -1,0 +1,97 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f1f3f4, #d9e2ec); /* Tons metálicos leves */
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.form-panel {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #d1d5db; /* Borda sutil */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.form-panel:hover {
+    transform: translateY(-3px); /* Leve elevação ao passar o mouse */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1f2937; /* Cor escura elegante */
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.3rem;
+}
+
+input {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #111827;
+    background: #f9fafb;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8); /* Gradiente estilizado */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Profundidade leve ao hover */
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Pressionado */
+}
+
+.message {
+    text-align: center;
+    font-size: 1rem;
+    color: #1e3a8a;
+    margin-top: 1rem;
+    padding: 0.6rem;
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    background: #e0f2fe; /* Azul leve para alertas */
+}

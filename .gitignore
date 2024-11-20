@@ -1,0 +1,3 @@
+# Ignorar node_modules nas pastas back e front
+back/node_modules/
+front/node_modules/

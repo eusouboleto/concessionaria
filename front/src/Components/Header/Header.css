@@ -1,0 +1,63 @@
+header {
+  background: linear-gradient(45deg, #4f46e5, #3b82f6); /* Fundo gradiente */
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+  border-radius: 0 0 20px 20px; /* Bordas arredondadas na parte inferior */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center; /* Centraliza os itens no header */
+}
+
+nav ul li {
+  position: relative; /* Para o efeito de barra inferior */
+}
+
+nav ul li a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #fbbf24; /* Amarelo claro no hover */
+  transform: translateY(-2px); /* Eleva levemente o link */
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #fbbf24; /* Barra amarela */
+  transition: width 0.3s; /* Expande a barra ao passar o mouse */
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+button {
+  background: #f43f5e;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: #e11d48;
+  transform: translateY(-2px);
+}
