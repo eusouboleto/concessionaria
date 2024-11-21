@@ -13,8 +13,8 @@ const ListUser = () => {
     const token = localStorage.getItem('token');
     const [redirectToLogin, setRedirectToLogin] = useState(false);
 
-     // Verificação de token dentro de useEffect separado
-     useEffect(() => {
+    // Verificação de token dentro de useEffect separado
+    useEffect(() => {
         if (!token) {
             setRedirectToLogin(true);
         }
