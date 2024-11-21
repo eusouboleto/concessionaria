@@ -12,11 +12,11 @@ function Contact() {
                 </div>
                 <div className="contact-item">
                     <h3>Telefone:</h3>
-                    <p>(11) 98765-4321</p>
+                    <p>(15) 99830-2279</p>
                 </div>
                 <div className="contact-item">
                     <h3>E-mail:</h3>
-                    <p>carrinho@uniso.com</p>
+                    <p>AutoConcessionaria@uniso.br</p>
                 </div>
                 <div className="contact-item">
                     <h3>Redes Sociais:</h3>

@@ -1,8 +1,8 @@
 import React from "react";
-import "./WhatsAppButton.css"; // Importando o CSS para estilos
+import "./WhatsAppButton.css";
 
 const WhatsAppButton = () => {
-  const whatsappNumber = "5515997426160"; // Número de telefone com código do país
+  const whatsappNumber = "5515998302279";
   const message = "Olá, gostaria de mais informações!";
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;

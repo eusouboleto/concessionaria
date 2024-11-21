@@ -33,26 +33,26 @@ const FormUsers = () => {
 
             if (response.ok) {
                 setMessage(data.message);
-                setMessageType('success'); // Define o tipo como sucesso
+                setMessageType('success');
                 setFormData({ username: '', password: '', email: '' });
                 setIsMessageVisible(true);
 
                 // Remover a mensagem após 3 segundos com efeito
                 setTimeout(() => {
-                    setIsMessageVisible(false); // Inicia a animação de saída
+                    setIsMessageVisible(false);
                     setTimeout(() => {
                         setMessage('');
-                        setMessageType(''); // Limpa o tipo da mensagem
-                    }, 300); // Remove a mensagem após a animação
+                        setMessageType('');
+                    }, 300);
                 }, 3000);
             } else {
                 setMessage(data.message || 'O registro de usuário falhou.');
-                setMessageType('error'); // Define o tipo como erro
+                setMessageType('error');
                 setIsMessageVisible(true);
             }
         } catch (error) {
             setMessage('Algum erro maluco aconteceu.');
-            setMessageType('error'); // Define o tipo como erro
+            setMessageType('error');
             setIsMessageVisible(true);
         }
     };

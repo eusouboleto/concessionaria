@@ -72,7 +72,7 @@ const FormVehicle = () => {
         <div className="form-container">
             <div className="form-panel">
             <h2>Cadastro de Veículos</h2>
-                <form onSubmit={handleSubmit}>
+                <form className="teste" onSubmit={handleSubmit}>
                     <div className="field">
                         <label>Marca:</label>
                         <input
@@ -132,7 +132,7 @@ const FormVehicle = () => {
                             onChange={handleImageChange}
                         />
                     </div>
-                    <button type="submit" className="button-submit">Cadastrar Carro</button>
+                    <button type="submit" className="button-submit">Cadastrar Veículo</button>
                 </form>
             </div>
             <div className="image-panel">

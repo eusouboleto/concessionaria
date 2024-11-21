@@ -2,9 +2,9 @@
 .form-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha mais ao topo */
-    padding: 0.5rem; /* Reduz o padding */
-    margin: 1rem auto; /* Menor margem */
+    align-items: flex-start;
+    padding: 0.5rem;
+    margin: 1rem auto;
     border-radius: 12px;
     max-width: 800px;
 }
@@ -95,15 +95,15 @@ input:focus {
     border-radius: 8px;
     max-width: 400px;
     margin: 10px auto;
-    opacity: 0; /* Escondido inicialmente */
+    opacity: 0;
     display: block;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    transform: translateY(10px); /* Posição inicial */
+    transform: translateY(10px);
 }
 
 .message.visible {
-    opacity: 1; /* Visível */
-    transform: translateY(0); /* Move para a posição original */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .message.hidden {

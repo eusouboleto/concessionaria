@@ -36,7 +36,7 @@ main {
   margin: 20px;
   background-color: #f5f5f5;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Rodapé */
@@ -46,7 +46,7 @@ footer {
   padding: 1rem;
   text-align: center;
   font-size: 1rem;
-  margin-top: 20px; /* Garantir espaçamento entre o conteúdo e rodapé */
+  margin-top: 20px;
   position: relative;
   bottom: 0;
 }
@@ -54,26 +54,26 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
   main {
-    padding: 1rem;  /* Menos espaçamento para telas pequenas */
-    margin: 10px;   /* Menos margem */
+    padding: 1rem;
+    margin: 10px;
   }
 
   header {
-    font-size: 1.3rem; /* Ajuste do tamanho da fonte no cabeçalho */
+    font-size: 1.3rem;
   }
 
   footer {
-    font-size: 0.9rem; /* Tamanho de fonte do rodapé para telas pequenas */
+    font-size: 0.9rem;
   }
 }
 
 /* Responsividade para telas menores que 480px */
 @media (max-width: 480px) {
   main {
-    padding: 0.8rem;  /* Reduzir ainda mais o padding */
+    padding: 0.8rem;
   }
 
   header, footer {
-    font-size: 1rem; /* Ajuste final para cabeçalho e rodapé */
+    font-size: 1rem;
   }
 }

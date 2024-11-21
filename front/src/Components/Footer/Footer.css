@@ -1,5 +1,5 @@
 footer {
-  background: linear-gradient(45deg, #1f2937, #2563eb); /* Ajustado para cores mais sóbrias e profissionais */
+  background: linear-gradient(45deg, #1f2937, #2563eb);
   color: #ffffff;
   padding: 2rem 1rem;
   text-align: center;
@@ -23,7 +23,7 @@ footer div {
 }
 
 footer a {
-  color: #fbbf24; /* Mantido o amarelo vibrante */
+  color: #fbbf24;
   font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
@@ -31,7 +31,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #ffffff; /* Troca para branco ao passar o mouse */
+  color: #ffffff;
   transform: scale(1.1);
 }
 

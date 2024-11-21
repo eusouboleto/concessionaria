@@ -1,5 +1,5 @@
 .contact-container {
-    max-width: 1000px; /* Maior largura para melhor uso do espaço */
+    max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 12px;
@@ -17,8 +17,8 @@
 .contact-info {
     display: flex;
     flex-wrap: wrap; /* Permite que os itens se ajustem para novas linhas, caso necessário */
-    gap: 2rem; /* Espaço entre os itens */
-    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 2rem;
+    justify-content: center;
 }
 
 .contact-item {
@@ -27,7 +27,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 1 1 250px; /* Flexível com tamanho mínimo de 250px */
+    flex: 1 1 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .contact-socials a {
-    display: block; /* Para exibir cada link em uma nova linha */
+    display: block;
     color: #1e88e5;
     text-decoration: none;
     margin-bottom: 0.5rem;

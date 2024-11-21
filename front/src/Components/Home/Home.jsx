@@ -21,9 +21,6 @@ function Home() {
           Nossa missão é oferecer uma experiência intuitiva e poderosa para que você possa focar no crescimento da sua concessionária, enquanto cuidamos da parte digital.
         </p>
       </section>
-      <section className="featured-vehicles">
-        {/* Conteúdo adicional */}
-      </section>
     </div>
   );
 }
