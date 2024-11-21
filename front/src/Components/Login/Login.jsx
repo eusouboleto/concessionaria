@@ -39,7 +39,7 @@ const Login = ({ onLogin }) => {
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <div class='field'>
-                    <label>Username:</label>
+                    <label>Nome de usuário:</label>
                     <input
                         type="text"
                         value={username}
@@ -48,7 +48,7 @@ const Login = ({ onLogin }) => {
                     />
                 </div>
                 <div class='field'>
-                    <label>Password:</label>
+                    <label>Senha:</label>
                     <input
                         type="password"
                         value={password}
@@ -56,7 +56,7 @@ const Login = ({ onLogin }) => {
                         required
                     />
                 </div>
-                <button type="submit">Log In</button>
+                <button type="submit">Logar</button>
             </form>
             {error && <p className="error">{error}</p>}
         </div>

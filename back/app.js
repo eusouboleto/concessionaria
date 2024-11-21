@@ -201,6 +201,21 @@ app.get('/users', authenticateToken, (req, res) => {
     });
 });
 
+// Endpoint para deletar usuário
+app.delete('/users/:id', authenticateToken, (req, res) => {
+    const { id } = req.params;
+
+    db.run('DELETE FROM Users WHERE id = ?', [id], function (err) {
+        if (err) {
+            console.error(`Erro ao deletar usuário com ID ${id}:`, err);
+            return res.status(500).json({ error: 'Erro ao deletar o usuário.' });
+        }
+        if (this.changes === 0) {
+            return res.status(404).json({ message: 'Usuário não encontrado.' });
+        }
+        res.json({ message: `Usuário com ID ${id} deletado com sucesso!` });
+    });
+});
 
 app.get('/profile', authenticateToken, (req, res) => {
     const { id } = req.user;

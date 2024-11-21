@@ -66,6 +66,8 @@ const ListUser = () => {
 
     const deleteUser = async (id) => {
         try {
+            console.log(`Tentando deletar o usuário com ID: ${id}`);
+    
             const response = await fetch(`${url}/${id}`, {
                 method: 'DELETE',
                 headers: {
@@ -73,19 +75,27 @@ const ListUser = () => {
                     'Authorization': `Bearer ${token}`,
                 },
             });
+    
             if (response.status === 401) {
+                console.warn('Token inválido ou expirado, redirecionando...');
                 localStorage.removeItem('token');
                 setRedirectToLogin(true);
                 return;
             }
-            if (!response.ok) throw new Error('Failed to delete user');
-
+    
+            if (!response.ok) {
+                console.error('Erro ao deletar usuário:', response.status, await response.text());
+                throw new Error('Failed to delete user');
+            }
+    
+            console.log('Usuário deletado com sucesso!');
             setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
-            // setUsers(users.filter((user) => user.id !== id));
         } catch (err) {
+            console.error('Erro ao deletar usuário:', err.message);
             setError(err.message);
         }
     };
+    
 
     const validateForm = () => {
         if (!formData.username || !formData.email) {
@@ -148,8 +158,8 @@ const ListUser = () => {
                                 <td>{user.username}</td>
                                 <td>{user.email}</td>
                                 <td className="button-group">
-                                    <button onClick={() => handleEditClick(user)}>Edit</button>
-                                    <button onClick={() => deleteUser(user.id)}>Delete</button>
+                                    <button onClick={() => handleEditClick(user)}>Editar</button>
+                                    <button onClick={() => deleteUser(user.id)}>Deletar</button>
                                 </td>
                             </tr>
                         ))}
