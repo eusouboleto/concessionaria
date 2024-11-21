@@ -30,6 +30,13 @@ const FormVehicle = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Verificação do campo ano
+        const currentYear = new Date().getFullYear();
+        if (parseInt(formData.ano) > currentYear) {
+            alert('O ano não pode ser maior que o ano atual.');
+            return; // Impede a submissão do formulário
+        }
+
         const formDataToSend = new FormData();
         formDataToSend.append('marca', formData.marca);
         formDataToSend.append('modelo', formData.modelo);
@@ -64,6 +71,7 @@ const FormVehicle = () => {
     return (
         <div className="form-container">
             <div className="form-panel">
+            <h2>Cadastro de Veículos</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="field">
                         <label>Marca:</label>

@@ -16,10 +16,10 @@ function Header({ onLogout }) {
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/form-vehicle">Cadastro de Carros</Link></li>
-                    <li><Link to="/form-users">Cadastro de Usuários</Link></li>
-                    <li><Link to="/list-vehicle">Consulta de Carros</Link></li>
-                    <li><Link to="/list-users">Consulta Usuários</Link></li>
+                    <li><Link to="/form-vehicle">Cadastrar Veículo</Link></li>
+                    <li><Link to="/form-users">Cadastrar Usuário</Link></li>
+                    <li><Link to="/list-vehicle">Meus Veículos</Link></li>
+                    <li><Link to="/list-users">Consultar Usuários</Link></li>
                     <li><Link to="/contact">Contato</Link></li>
                     <li>
                         {token ? (

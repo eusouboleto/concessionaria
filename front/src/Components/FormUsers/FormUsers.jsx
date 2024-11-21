@@ -42,9 +42,9 @@ const FormUsers = () => {
 
     return (
         <div>
-            <h2>Cadastro de Usuários</h2>
 			<div className="form-container">
 				<div className="form-panel">
+                <h2>Cadastro de Usuários</h2>
             <form onSubmit={handleSubmit}>
                 <div className="field">
                     <label>Nome de usuário:</label>
