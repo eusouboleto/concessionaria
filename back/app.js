@@ -90,13 +90,13 @@ app.put('/vehicles/:id', (req, res) => {
     const { marca, modelo, ano, preco, cor } = req.body; // Extrair os dados do corpo da requisição
 
     // Validar a entrada
-    if (!marca || !modelo || !ano || !preco) {
-        res.status(400).json({ message: 'Todos os campos obrigatórios (marca, modelo, ano, preco) devem ser preenchidos!' });
+    if (!marca || !modelo || !ano || !preco || !cor) {
+        res.status(400).json({ message: 'Todos os campos obrigatórios (marca, modelo, ano, preco, cor) devem ser preenchidos!' });
         return;
     }
 
     db.run(
-        'UPDATE Veiculos SET marca = ?, modelo = ?, ano = ?, preco = ?, cor = ? WHERE id = ?',
+        'UPDATE Vehicles SET marca = ?, modelo = ?, ano = ?, preco = ?, cor = ? WHERE id = ?',
         [marca, modelo, ano, preco, cor, id],
         function (err) {
             if (err) {

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import './FormPet.css';
+import './FormVehicle.css';
 
 const url = 'http://localhost:3000/vehicles';
 
-const FormPet = () => {
+const FormVehicle = () => {
     const [formData, setFormData] = useState({
-        nome: '',
-        nasc: '',
-        peso: '',
+        marca: '',
+        modelo: '',
+        ano: '',
+        preco: '',
         cor: '',
         image: '' 
     });
@@ -23,16 +24,17 @@ const FormPet = () => {
     };
 
     const clearForm = () => {
-        setFormData({ nome: '', nasc: '', peso: '', cor: '', image: '' });
+        setFormData({ marca: '', modelo: '', ano: '', preco: '', cor: '', image: '' });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const formDataToSend = new FormData();
-        formDataToSend.append('nome', formData.nome);
-        formDataToSend.append('nasc', formData.nasc);
-        formDataToSend.append('peso', formData.peso);
+        formDataToSend.append('marca', formData.marca);
+        formDataToSend.append('modelo', formData.modelo);
+        formDataToSend.append('ano', formData.ano);
+        formDataToSend.append('preco', formData.preco);
         formDataToSend.append('cor', formData.cor);
         if (formData.image) {
             formDataToSend.append('image', formData.image);
@@ -45,17 +47,17 @@ const FormPet = () => {
             });
 
             if (!response.ok) {
-                throw new Error('Failed to add pet');
+                throw new Error('Falhou em adicinar veículo.');
             }
 
             const data = await response.json();
 
-            alert(`Pet added successfully! ID: ${data.id}`);
+            alert(`Veículo adicionado com sucesso! ID: ${data.id}`);
 
             clearForm();
         } catch (error) {
             console.error('Error:', error);
-            alert('Error adding pet');
+            alert('Erro catch ao adicionar veículo.');
         }
     };
 
@@ -64,11 +66,21 @@ const FormPet = () => {
             <div className="form-panel">
                 <form onSubmit={handleSubmit}>
                     <div className="field">
+                        <label>Marca:</label>
+                        <input
+                            type="text"
+                            name="marca"
+                            value={formData.marca}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="field">
                         <label>Modelo:</label>
                         <input
                             type="text"
-                            name="nome"
-                            value={formData.nome}
+                            name="modelo"
+                            value={formData.modelo}
                             onChange={handleChange}
                             required
                         />
@@ -76,24 +88,26 @@ const FormPet = () => {
                     <div className="field">
                         <label>Ano:</label>
                         <input
-                            type="date"
-                            name="nasc"
-                            value={formData.nasc}
+                            type="number"
+                            name="ano"
+                            value={formData.ano}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="field">
-                        <label>KM:</label>
+                        <label>Preço:</label>
                         <input
                             type="number"
-                            step="0.1"
-                            name="peso"
-                            value={formData.peso}
+                            step="0.01"
+                            name="preco"
+                            value={formData.preco}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="field">
-                        <label>Valor:</label>
+                        <label>Cor:</label>
                         <input
                             type="text"
                             name="cor"
@@ -107,10 +121,10 @@ const FormPet = () => {
                             type="file"
                             name="image"
                             accept="image/*"
-                            onChange={handleImageChange} 
+                            onChange={handleImageChange}
                         />
                     </div>
-                    <button type="submit">Add Carro</button>
+                    <button type="submit">Add Veículo</button>
                 </form>
             </div>
             <div className="image-panel">
@@ -126,7 +140,7 @@ const FormPet = () => {
                 )}
             </div>
         </div>
-    );
+    );    
 };
 
-export default FormPet;
+export default FormVehicle;

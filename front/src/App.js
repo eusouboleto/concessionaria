@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 import Home from './Components/Home/Home';
 import Contact from './Components/Contact/Contact';
-import FormPet from './Components/FormPet/FormPet';
+import FormVehicle from './Components/FormVehicle/FormVehicle';
 import FormUsers from './Components/FormUsers/FormUsers';
-import ListPet from './Components/ListPet/ListPet';
+import ListVehicle from './Components/ListVehicle/ListVehicle';
 import ListUsers from './Components/ListUsers/ListUsers';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -35,10 +35,10 @@ function App() {
                         <Route path='/' element={<Home />} />
                         <Route path='/login' element={<Login onLogin={handleLogin} />} />
                         <Route 
-                            path='/form-pet' 
+                            path='/form-vehicle' 
                             element={
                                 <PrivateRoute>
-                                    <FormPet />
+                                    <FormVehicle />
                                 </PrivateRoute>
                             } 
                         />
@@ -51,10 +51,10 @@ function App() {
                             } 
                         />
                         <Route 
-                            path='/list-pet' 
+                            path='/list-vehicle' 
                             element={
                                 <PrivateRoute>
-                                    <ListPet />
+                                    <ListVehicle />
                                 </PrivateRoute>
                             } 
                         />

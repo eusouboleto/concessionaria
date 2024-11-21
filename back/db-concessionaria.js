@@ -22,7 +22,6 @@ db.serialize(() => {
             modelo          varchar(60)     not null,
             ano             integer         not null,
             preco           decimal(10,2)   not null,
-            disponibilidade boolean         default true,
             cor             varchar(60),
             image           varchar(255)
         );

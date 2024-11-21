@@ -7,7 +7,7 @@ function Home() {
       <section className="hero">
         <h1 className="hero-title">Bem-vindo à nossa Concessionária</h1>
         <p className="hero-description">Explore nossa ampla seleção de veículos de alta qualidade.</p>
-        <a href="#" className="hero-cta">Ver Estoque</a>
+        <a href="/list-vehicle" className="hero-cta">Ver Estoque</a>
       </section>
       <section className="about">
         <h2 className="about-title">Sobre Nós</h2>
