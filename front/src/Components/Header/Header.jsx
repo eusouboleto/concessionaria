@@ -23,9 +23,9 @@ function Header({ onLogout }) {
                     <li><Link to="/contact">Contato</Link></li>
                     <li>
                         {token ? (
-                            <button onClick={handleLogout}>Logout</button>
+                            <button className="header-button" onClick={handleLogout}>Logout</button>
                         ) : (
-                            <button onClick={() => navigate('/login')}>Login</button>
+                            <button className="header-button" onClick={() => navigate('/login')}>Login</button>
                         )}
                     </li>
                 </ul>

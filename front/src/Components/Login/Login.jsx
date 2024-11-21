@@ -64,7 +64,7 @@ const Login = ({ onLogin }) => {
                         required
                     />
                 </div>
-                <button type="submit" disabled={loading}>
+                <button className="login-btn" type="submit" disabled={loading}>
                     {loading ? 'Entrando...' : 'Logar'}
                 </button>
             </form>

@@ -1,3 +1,4 @@
+/* Container principal do formulário */
 .form-container {
     display: flex;
     justify-content: center;
@@ -5,30 +6,29 @@
     padding: 2rem;
     margin: 2rem auto;
     border-radius: 12px;
-    background: linear-gradient(135deg, #f1f3f4, #d9e2ec); /* Tons metálicos leves */
     max-width: 800px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* Painel do formulário */
 .form-panel {
     width: 100%;
     max-width: 500px;
     padding: 2rem;
     border-radius: 10px;
     background: #ffffff;
-    border: 1px solid #d1d5db; /* Borda sutil */
+    border: 1px solid #d1d5db;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .form-panel:hover {
-    transform: translateY(-3px); /* Leve elevação ao passar o mouse */
+    transform: translateY(-3px);
 }
 
 h2 {
     text-align: center;
     font-size: 2rem;
-    color: #1f2937; /* Cor escura elegante */
+    color: #1f2937;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
@@ -61,37 +61,101 @@ input:focus {
     outline: none;
 }
 
-button {
+/* Botão - Salvar */
+.btn-submit {
     width: 100%;
     padding: 0.85rem;
     font-size: 1.1rem;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8); /* Gradiente estilizado */
+    background: #3b82f6;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-button:hover {
+.btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Profundidade leve ao hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-button:active {
+.btn-submit:active {
     transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Pressionado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Mensagens de sucesso ou erro */
 .message {
     text-align: center;
     font-size: 1rem;
-    color: #1e3a8a;
     margin-top: 1rem;
     padding: 0.6rem;
-    border: 1px solid #3b82f6;
     border-radius: 8px;
-    background: #e0f2fe; /* Azul leve para alertas */
+    display: inline-block;
+    max-width: 400px;
+    margin: 10px auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.message.success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.message.error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #f87171;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .form-panel {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    input {
+        font-size: 0.95rem;
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .form-panel {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        font-size: 0.95rem;
+    }
 }

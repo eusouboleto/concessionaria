@@ -5,14 +5,20 @@ function Home() {
   return (
     <div className="home-container">
       <section className="hero">
-        <h1 className="hero-title">Bem-vindo à nossa Concessionária</h1>
-        <p className="hero-description">Explore nossa ampla seleção de veículos de alta qualidade.</p>
-        <a href="/list-vehicle" className="hero-cta">Ver Estoque</a>
+        <h1 className="hero-title">Bem-vindo ao AutoConcessionária</h1>
+        <p className="hero-description">A plataforma ideal para gerenciar e expandir sua concessionária com facilidade e eficiência!</p>
+        <a href="/list-vehicle" className="hero-cta">Visualizar seu Estoque</a>
       </section>
       <section className="about">
-        <h2 className="about-title">Sobre Nós</h2>
+        <h2 className="about-title">Sobre o AutoConcessionária</h2>
         <p className="about-description">
-          Em nossa concessionária, nos orgulhamos de oferecer um atendimento excepcional ao cliente e uma ampla seleção de veículos de alta qualidade. Nossa equipe especializada está dedicada a ajudá-lo a encontrar o carro, caminhão ou SUV perfeito para atender às suas necessidades.
+          <center>
+            <b><span style={{ color: '#1e40af' }}>Parabéns por adquirir o AutoConcessionária!</span></b>
+          </center>
+          Nossa plataforma foi desenvolvida para tornar a gestão do seu estoque de veículos mais eficiente, com funcionalidades que permitem um controle total sobre seus carros, preços, imagens e muito mais. Aqui você pode gerenciar facilmente sua frota, adicionar novos veículos, adicionar novos usuários, editar informações e acompanhar o desempenho de suas vendas.
+        </p>
+        <p className="about-description">
+          Nossa missão é oferecer uma experiência intuitiva e poderosa para que você possa focar no crescimento da sua concessionária, enquanto cuidamos da parte digital.
         </p>
       </section>
       <section className="featured-vehicles">

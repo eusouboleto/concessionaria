@@ -1,100 +1,163 @@
+/* Estilos gerais para a página de lista de usuários */
+.user-list-container {
+    margin: 20px;
+}
+
 .user-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 .user-table th, .user-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    padding: 10px;
     text-align: left;
+    border: 1px solid #ddd;
 }
 
 .user-table th {
-    background-color: #f2f2f2;
+    background-color: #f4f4f4;
     font-weight: bold;
 }
 
-.user-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+/* Estilos para os botões da lista de usuários */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.user-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-button {
+.user-table button {
+    flex: 1;
+    margin: 0 5px;
     color: white;
     border: none;
-    padding: 6px 10px;
-	margin-right: 5px;
-    border-radius: 4px;
+    padding: 12px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 0.9rem;
-    max-width: 80px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.edit-button {
-    background-color: #007bff;
+.user-table button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-.delete-button {
+/* Botão de Editar */
+.user-table .edit-button {
+    background-color: #f39c12;
+}
+
+.user-table .edit-button:hover {
+    background-color: #e67e22;
+}
+
+/* Botão de Deletar */
+.user-table .delete-button {
+    background-color: #c0392b;
+}
+
+.user-table .delete-button:hover {
     background-color: #e74c3c;
 }
 
-.save-button {
+/* Botão de Salvar */
+.edit-form .save-button {
     background-color: #28a745;
 }
 
-.cancel-button {
-    background-color: #6c757d;
+.edit-form .save-button:hover {
+    background-color: #218838;
 }
 
+/* Botão de Cancelar */
+.edit-form .cancel-button {
+    background-color: #e74c3c;
+}
 
+.edit-form .cancel-button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilos para os campos de input no formulário de edição */
 input {
     height: 40px;
-    padding: 8px;
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: 1rem; 
-    box-sizing: border-box; 
-	margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
 }
 
-
-.user-table th:nth-child(1), .pet-table td:nth-child(1) {
-    width: 30%;
+input:focus {
+    border-color: #3498db;
 }
 
-.user-table th:nth-child(2), .pet-table td:nth-child(2) {
-    width: 10%;
+/* Estilos específicos para o formulário de edição */
+.edit-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
-.user-table th:nth-child(3), .pet-table td:nth-child(3) {
-    width: 10%;
-}
-
-.user-table th:nth-child(4), .pet-table td:nth-child(4) {
-    width: 10%;
-}
-
-.user-table th:nth-child(5), .pet-table td:nth-child(5) {
-    width: 10%;
-}
-
-.user-table th:nth-child(6), .pet-table td:nth-child(6) {
-    width: 15%;
-    text-align: center;
-}
-
-.user-image {
+.edit-form input {
+    margin-bottom: 12px;
     width: 100%;
-    max-width: 150px;
-    height: auto;
-    object-fit: cover;
 }
 
+.edit-form .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-form .save-button,
+.edit-form .cancel-button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Responsividade - Ajuste de layout para telas menores */
+@media (max-width: 768px) {
+    .user-table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .user-table th, .user-table td {
+        padding: 8px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .user-table button {
+        margin: 5px 0;
+    }
+
+    .edit-form input {
+        margin-bottom: 12px;
+    }
+
+    .edit-form .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .edit-form .save-button,
+    .edit-form .cancel-button {
+        margin: 5px 0;
+    }
+}

@@ -76,7 +76,7 @@ const FormUsers = () => {
                         required
                     />
                 </div>
-                <button type="submit">Criar</button>
+                <button className="btn-submit" type="submit">Criar</button>
             </form>
 			</div>
 			</div>

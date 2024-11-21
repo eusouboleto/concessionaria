@@ -5,11 +5,11 @@ import './Footer.css';
 function Footer() {
   return (
     <footer>
-      <p>&copy; {new Date().getFullYear()} PetShop. Todos os direitos reservados.</p>
+      <p>&copy; {new Date().getFullYear()} AutoConcessionária - Todos os direitos reservados.</p>
       <div>
-        <a href="https://www.facebook.com" target="_blank"> Facebook </a>
-        <a href="https://www.instagram.com" target="_blank"> Instagram </a>
-        <a href="https://www.twitter.com" target="_blank"> Twitter </a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"> Facebook </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"> Instagram </a>
+        <a href="https://www.youtube.com/shorts/0CL7aKLxfOI" target="_blank" rel="noopener noreferrer"> YouTube </a>
       </div>
     </footer>
   );

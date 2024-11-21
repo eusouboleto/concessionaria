@@ -1,0 +1,58 @@
+.contact-container {
+    max-width: 1000px; /* Maior largura para melhor uso do espaço */
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.contact-container h1 {
+    font-size: 2.5rem;
+    color: #1e88e5;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se ajustem para novas linhas, caso necessário */
+    gap: 2rem; /* Espaço entre os itens */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.contact-item {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 250px; /* Flexível com tamanho mínimo de 250px */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item h3 {
+    font-size: 1.6rem;
+    color: #1565c0;
+    margin-bottom: 0.5rem;
+}
+
+.contact-socials {
+    margin-top: 1rem;
+}
+
+.contact-socials a {
+    display: block; /* Para exibir cada link em uma nova linha */
+    color: #1e88e5;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.contact-socials a:hover {
+    text-decoration: underline;
+}

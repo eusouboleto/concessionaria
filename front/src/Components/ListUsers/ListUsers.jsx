@@ -158,8 +158,8 @@ const ListUser = () => {
                                 <td>{user.username}</td>
                                 <td>{user.email}</td>
                                 <td className="button-group">
-                                    <button onClick={() => handleEditClick(user)}>Editar</button>
-                                    <button onClick={() => deleteUser(user.id)}>Deletar</button>
+                                    <button className="edit-button" onClick={() => handleEditClick(user)}>Editar</button>
+                                    <button className="delete-button" onClick={() => deleteUser(user.id)}>Deletar</button>
                                 </td>
                             </tr>
                         ))}
@@ -192,8 +192,8 @@ const ListUser = () => {
                         placeholder="Senha"
                     />
                     <div className="button-group">
-                        <button onClick={updateUser}>Salvar</button>
-                        <button onClick={() => setSelectedUser(null)}>Cancelar</button>
+                        <button className="save-button" onClick={updateUser}>Salvar</button>
+                        <button className="cancel-button" onClick={() => setSelectedUser(null)}>Cancelar</button>
                     </div>
                 </div>
             )}
