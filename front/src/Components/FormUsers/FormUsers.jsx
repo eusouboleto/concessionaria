@@ -8,6 +8,8 @@ const FormUsers = () => {
         email: ''
     });
     const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState(''); // 'success' ou 'error'
+    const [isMessageVisible, setIsMessageVisible] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -31,12 +33,27 @@ const FormUsers = () => {
 
             if (response.ok) {
                 setMessage(data.message);
+                setMessageType('success'); // Define o tipo como sucesso
                 setFormData({ username: '', password: '', email: '' });
+                setIsMessageVisible(true);
+
+                // Remover a mensagem após 3 segundos com efeito
+                setTimeout(() => {
+                    setIsMessageVisible(false); // Inicia a animação de saída
+                    setTimeout(() => {
+                        setMessage('');
+                        setMessageType(''); // Limpa o tipo da mensagem
+                    }, 300); // Remove a mensagem após a animação
+                }, 3000);
             } else {
                 setMessage(data.message || 'O registro de usuário falhou.');
+                setMessageType('error'); // Define o tipo como erro
+                setIsMessageVisible(true);
             }
         } catch (error) {
             setMessage('Algum erro maluco aconteceu.');
+            setMessageType('error'); // Define o tipo como erro
+            setIsMessageVisible(true);
         }
     };
 
@@ -80,7 +97,15 @@ const FormUsers = () => {
             </form>
 			</div>
 			</div>
-            {message && <p>{message}</p>}
+            {message && (
+                <p
+                    className={`message ${messageType} ${
+                        isMessageVisible ? 'visible' : 'hidden'
+                    }`}
+                >
+                    {message}
+                </p>
+            )}
         </div>
     );
 };

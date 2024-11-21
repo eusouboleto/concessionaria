@@ -55,6 +55,9 @@ button.login-btn:hover {
 
 .error {
     color: red;
-    font-size: 14px;
+    font-size: 18px;
     margin-top: 10px;
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
 }

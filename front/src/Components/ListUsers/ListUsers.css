@@ -47,20 +47,20 @@
 
 /* Botão de Editar */
 .user-table .edit-button {
-    background-color: #f39c12;
+    background-color: #125cb7;
 }
 
 .user-table .edit-button:hover {
-    background-color: #e67e22;
+    background-color: #122d7d;
 }
 
 /* Botão de Deletar */
 .user-table .delete-button {
-    background-color: #c0392b;
+    background-color: #e64a39;
 }
 
 .user-table .delete-button:hover {
-    background-color: #e74c3c;
+    background-color: #a52c1e;
 }
 
 /* Botão de Salvar */

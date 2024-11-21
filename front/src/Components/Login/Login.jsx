@@ -5,13 +5,16 @@ import './Login.css';
 const Login = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(null);
+    const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState(''); // 'success' ou 'error'
+    const [isMessageVisible, setIsMessageVisible] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        setError(null);
+        setMessage('');
+        setIsMessageVisible(false);
         setLoading(true);
 
         try {
@@ -30,13 +33,26 @@ const Login = ({ onLogin }) => {
             const { token } = await response.json();
             localStorage.setItem('token', token);
 
-            // Adiciona um pequeno delay antes de navegar
-            setTimeout(() => navigate('/'), 1000);
+            setMessage('Login realizado com sucesso!');
+            setMessageType('success');
+            setIsMessageVisible(true);
+
+            // Redireciona após 1 segundo
+            setTimeout(() => navigate('/'), 2000);
         } catch (err) {
-            setError(err.message);
+            setMessage(err.message);
+            setMessageType('error');
+            setIsMessageVisible(true);
         } finally {
-            // Garante que o estado de carregamento termine após o delay
-            setTimeout(() => setLoading(false), 1000);
+            setTimeout(() => setLoading(false), 2000);
+            // Remove a mensagem após 3 segundos
+            setTimeout(() => {
+                setIsMessageVisible(false);
+                setTimeout(() => {
+                    setMessage('');
+                    setMessageType('');
+                }, 300);
+            }, 3000);
         }
     };
 
@@ -65,17 +81,20 @@ const Login = ({ onLogin }) => {
                     />
                 </div>
                 <button className="login-btn" type="submit" disabled={loading}>
-                    {loading ? 'Entrando...' : 'Logar'}
+                    {loading ? 'Efetuando Login...' : 'Logar'}
                 </button>
             </form>
-            {error && <ErrorMessage message={error} />}
+            {message && (
+                <p
+                    className={`message ${messageType} ${
+                        isMessageVisible ? 'visible' : 'hidden'
+                    }`}
+                >
+                    {message}
+                </p>
+            )}
         </div>
     );
-};
-
-// Componente para exibição de mensagens de erro
-const ErrorMessage = ({ message }) => {
-    return <p className="error">{message}</p>;
 };
 
 export default Login;

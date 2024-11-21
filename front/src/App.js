@@ -11,6 +11,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute'; 
+import WhatsAppButton from './Components/WhatsAppButton/WhatsAppButton';
 
 import './App.css';
 
@@ -69,6 +70,7 @@ function App() {
                         <Route path='/contact' element={<Contact />} />
                     </Routes>
                 </main>
+                <WhatsAppButton />
                 <Footer />
             </div>
         </BrowserRouter>

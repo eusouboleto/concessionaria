@@ -2,9 +2,9 @@
 .form-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    margin: 2rem auto;
+    align-items: flex-start; /* Alinha mais ao topo */
+    padding: 0.5rem; /* Reduz o padding */
+    margin: 1rem auto; /* Menor margem */
     border-radius: 12px;
     max-width: 800px;
 }
@@ -89,14 +89,26 @@ input:focus {
 /* Mensagens de sucesso ou erro */
 .message {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-top: 1rem;
-    padding: 0.6rem;
+    padding: 1rem;
     border-radius: 8px;
-    display: inline-block;
     max-width: 400px;
     margin: 10px auto;
-    transition: opacity 0.3s ease-in-out;
+    opacity: 0; /* Escondido inicialmente */
+    display: block;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(10px); /* Posição inicial */
+}
+
+.message.visible {
+    opacity: 1; /* Visível */
+    transform: translateY(0); /* Move para a posição original */
+}
+
+.message.hidden {
+    opacity: 0; /* Início do desaparecimento */
+    transform: translateY(10px); /* Sai para baixo */
 }
 
 .message.success {
