@@ -13,13 +13,17 @@ const ListUser = () => {
     const token = localStorage.getItem('token');
     const [redirectToLogin, setRedirectToLogin] = useState(false);
 
-    useEffect(() => {
+     // Verificação de token dentro de useEffect separado
+     useEffect(() => {
         if (!token) {
             setRedirectToLogin(true);
-            return;
         }
+    }, [token]);
 
+    useEffect(() => {
         const fetchUsers = async () => {
+            if (!token) return;
+
             try {
                 const response = await fetch(url, {
                     headers: {
@@ -47,7 +51,7 @@ const ListUser = () => {
     }, [token]);
 
     if (redirectToLogin) return <Navigate to="/login" replace />;
-    if (loading) return <p>Loading users...</p>;
+    if (loading) return <p>Carregando usuários...</p>;
     if (error) return <p>Error: {error}</p>;
 
     const handleEditClick = (user) => {
@@ -76,22 +80,38 @@ const ListUser = () => {
             }
             if (!response.ok) throw new Error('Failed to delete user');
 
-            setUsers(users.filter((user) => user.id !== id));
+            setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
+            // setUsers(users.filter((user) => user.id !== id));
         } catch (err) {
             setError(err.message);
         }
     };
 
+    const validateForm = () => {
+        if (!formData.username || !formData.email) {
+            alert('Preencha todos os campos obrigatórios');
+            return false;
+        }
+        return true;
+    };
+
     const updateUser = async () => {
+        if (!validateForm()) return;
+
         try {
+            // Remover a senha se não for alterada
+            const updatedData = { ...formData };
+            if (!formData.password) delete updatedData.password;
+
             const response = await fetch(`${url}/${selectedUser.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(updatedData),
             });
+
             if (response.status === 401) {
                 localStorage.removeItem('token');
                 setRedirectToLogin(true);
@@ -99,7 +119,9 @@ const ListUser = () => {
             }
             if (!response.ok) throw new Error('Failed to update user');
 
-            setUsers(users.map((user) => (user.id === selectedUser.id ? formData : user)));
+            setUsers((prevUsers) =>
+                prevUsers.map((user) => (user.id === selectedUser.id ? updatedData : user))
+            );
             setSelectedUser(null);
         } catch (err) {
             setError(err.message);
@@ -110,14 +132,14 @@ const ListUser = () => {
         <div className="user-list-container">
             <h2>Lista de Usuários</h2>
             {users.length === 0 ? (
-                <p>No users found</p>
+                <p>Nenhum usuário encontrado.</p>
             ) : (
                 <table className="user-table">
                     <thead>
                         <tr>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Actions</th>
+                            <th>Nome de usuário:</th>
+                            <th>E-mail:</th>
+                            <th>Ações:</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -137,31 +159,31 @@ const ListUser = () => {
 
             {selectedUser && (
                 <div className="edit-form">
-                    <h3>Edit User</h3>
+                    <h3>Editar usuário</h3>
                     <input
                         type="text"
                         name="username"
                         value={formData.username}
                         onChange={handleInputChange}
-                        placeholder="Username"
+                        placeholder="Nome de usuário"
                     />
                     <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="Email"
+                        placeholder="E-mail"
                     />
                     <input
                         type="password"
                         name="password"
                         value={formData.password}
                         onChange={handleInputChange}
-                        placeholder="Password"
+                        placeholder="Senha"
                     />
                     <div className="button-group">
-                        <button onClick={updateUser}>Save</button>
-                        <button onClick={() => setSelectedUser(null)}>Cancel</button>
+                        <button onClick={updateUser}>Salvar</button>
+                        <button onClick={() => setSelectedUser(null)}>Cancelar</button>
                     </div>
                 </div>
             )}

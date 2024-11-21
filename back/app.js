@@ -193,6 +193,15 @@ app.post('/login', (req, res) => {
     });
 });
 
+// Endpoint para listar todos os usuários
+app.get('/users', authenticateToken, (req, res) => {
+    db.all('SELECT * FROM Users', [], (err, rows) => {
+        if (err) return res.status(500).json({ error: err.message });
+        res.json({ users: rows });
+    });
+});
+
+
 app.get('/profile', authenticateToken, (req, res) => {
     const { id } = req.user;
     db.get('SELECT id, username, email, created_at FROM Users WHERE id = ?', [id], (err, user) => {

@@ -33,10 +33,10 @@ const FormUsers = () => {
                 setMessage(data.message);
                 setFormData({ username: '', password: '', email: '' });
             } else {
-                setMessage(data.message || 'Registration failed');
+                setMessage(data.message || 'O registro de usuário falhou.');
             }
         } catch (error) {
-            setMessage('An error occurred');
+            setMessage('Algum erro maluco aconteceu.');
         }
     };
 
@@ -47,7 +47,7 @@ const FormUsers = () => {
 				<div className="form-panel">
             <form onSubmit={handleSubmit}>
                 <div className="field">
-                    <label>Username:</label>
+                    <label>Nome de usuário:</label>
                     <input
                         type="text"
                         name="username"
@@ -57,7 +57,7 @@ const FormUsers = () => {
                     />
                 </div>
                 <div className="field">
-                    <label>Password:</label>
+                    <label>Senha:</label>
                     <input
                         type="password"
                         name="password"
@@ -67,7 +67,7 @@ const FormUsers = () => {
                     />
                 </div>
                 <div className="field">
-                    <label>Email:</label>
+                    <label>E-mail:</label>
                     <input
                         type="email"
                         name="email"
@@ -76,7 +76,7 @@ const FormUsers = () => {
                         required
                     />
                 </div>
-                <button type="submit">Salvar</button>
+                <button type="submit">Criar</button>
             </form>
 			</div>
 			</div>
