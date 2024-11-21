@@ -113,7 +113,22 @@ app.put('/vehicles/:id', (req, res) => {
     );
 });
 
- 
+// Endpoint para deletar um veículo
+app.delete('/vehicles/:id', (req, res) => {
+    const { id } = req.params;
+
+    db.run('DELETE FROM Vehicles WHERE id = ?', [id], function (err) {
+        if (err) {
+            console.error(`Erro ao deletar veículo com ID ${id}:`, err);
+            return res.status(500).json({ error: 'Erro ao deletar o veículo.' });
+        }
+        if (this.changes === 0) {
+            return res.status(404).json({ message: 'Veículo não encontrado.' });
+        }
+        res.json({ message: `Veículo com ID ${id} deletado com sucesso!` });
+    });
+});
+
 
 app.post('/users', async (req, res) => {
     const { username, password, email } = req.body;
